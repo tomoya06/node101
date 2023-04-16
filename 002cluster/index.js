@@ -3,6 +3,7 @@ import os from 'node:os';
 
 if (cluster.isPrimary) {
   console.log('i;m primary');
+  console.log('Main process: ' + process.pid);
 
   for (let i = 0; i < os.cpus().length; i++) {
     cluster.fork();
